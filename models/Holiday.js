@@ -2,10 +2,21 @@ const mongoose = require('mongoose');
 const Schema   = mongoose.Schema;
 
 const holidaySchema = new Schema({
-  _user: {
+  _userId: {
     type: Schema.Types.ObjectId,
-    ref: 'User'
+    ref: 'User',
+    required: true
   },
+  startDate: {type: Date, required: true},
+  endDate: {type: Date, required: true},
+  status: {
+    type: String, 
+    enum: ["PENDING", "APPROVED", "REJECTED"],
+    default: "PENDING"
+  },
+  employeeComment: String,
+  managerComment: String,
+
 }, {
   timestamps: {
     createdAt: 'created_at',
