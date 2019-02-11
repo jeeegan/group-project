@@ -3,10 +3,9 @@ const router  = express.Router();
 const multer  = require('multer');
 const Picture = require('../models/picture');
 const { isConnected } = require('../configs/middlewares');
-const Holiday = require("../models/Holiday")
-const User = require("../models/User")
+const Holiday = require("../models/Holiday");
+const User = require("../models/User");
 
-/* GET home page */
 router.get('/', (req, res, next) => {
   if(req.user) {
     User.findOne({ _id: req.user._id })
@@ -18,7 +17,6 @@ router.get('/', (req, res, next) => {
   }
 });
 
-// HOLIDAY REQUEST ROUTES
 router.get('/holiday-request', (req, res, next) => {
   if(req.user) {
     User.findOne({ _id: req.user._id })
@@ -32,12 +30,11 @@ router.get('/holiday-request', (req, res, next) => {
   });
 
 router.post('/holiday-request', (req, res, next) => {
-  Holiday.save({
-    startDate: req.body.startDate,
-    endDate: req.body.endDate,
-    employeeComment: req.body.employeeComment
-  })
+  const { startDate, endDate, employeeComment } = req.body;
+  const newHoliday = new Holiday({ _userId: req.user._id, startDate, endDate, employeeComment});
+  newHoliday.save()
   .then(() => {
+    res.render('index');
   })
   .catch(console.log)
 })
@@ -64,6 +61,5 @@ router.post('/upload-picture', upload.single('photo'), (req, res) => {
       res.redirect('/');
   });
 });
-
 
 module.exports = router;
