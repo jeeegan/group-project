@@ -19,9 +19,9 @@ router.post("/login", passport.authenticate("local", {
   passReqToCallback: true
 }));
 
-router.get("/signup", (req, res, next) => {
-  res.render("auth/signup");
-});
+// router.get("/signup", (req, res, next) => {
+//   res.render("auth/signup");
+// });
 
 router.post("/signup", (req, res, next) => {
   const username = req.body.username;
