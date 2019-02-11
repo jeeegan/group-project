@@ -34,10 +34,10 @@
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
+          {{#if isConnected}}
           <li class="nav-item">
             <a class="nav-link" href="/">Home</a>
           </li>
-          {{#if isConnected}}
           <li class="nav-item">
             <a class="nav-link" href="/holiday-request">Holiday Request</a>
           </li>
