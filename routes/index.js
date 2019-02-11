@@ -3,25 +3,31 @@ const router  = express.Router();
 const multer  = require('multer');
 const Picture = require('../models/picture');
 const { checkConnected } = require('../configs/middlewares');
-
+const User = require("../models/User")
 
 
 /* GET home page */
 router.get('/', (req, res, next) => {
   if(req.user) {
-    res.render('index');
+    User.findOne({ _id: req.user._id })
+    .then(user => {
+      res.render('index', user);
+    }) 
   }else {
     res.redirect('/auth/login');
   }
 });
 
 router.get('/holiday-request', (req, res, next) => {
+  res.render('holiday-request')
 });
 
 router.get('/history', (req, res, next) => {
+  res.render('holiday-request')
 });
 
 router.get('/my-profile', (req, res, next) => {
+  res.render('holiday-request')
 });
 
 const upload = multer({ dest: './public/uploads/' });
