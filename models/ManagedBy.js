@@ -12,5 +12,5 @@ const managedBySchema = new Schema({
   }
 });
 
-const ManagedBy = mongoose.model('User', managedBySchema);
+const ManagedBy = mongoose.model('ManagedBy', managedBySchema);
 module.exports = ManagedBy;

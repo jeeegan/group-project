@@ -46,19 +46,23 @@
           </li>    
            <li class="nav-item">
             <a class="nav-link" href="/my-profile">My Profile</a>
-          </li>        
+          </li>           
+          {{/if}}
+          {{#if isManager}}
           <li class="nav-item">
             <a class="nav-link" href="/add-employee">Add Employee</a>
           </li>     
-           <li class="nav-item">
+          <li class="nav-item">
             <a class="nav-link" href="/approve-holidays">Approve Holidays</a>
           </li> 
-           <li class="nav-item">
+          <li class="nav-item">
             <a class="nav-link" href="/employee-list">Employee List</a>
-          </li>    
+          </li>  
+          {{/if}}
+          {{#if isConnected}}
           <li class="nav-item">
             <a class="nav-link" href="/auth/logout">Logout</a>
-          </li>    
+          </li>   
           {{/if}}
         </ul>
       </div>
