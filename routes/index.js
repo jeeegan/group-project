@@ -2,9 +2,9 @@ const express = require('express');
 const router  = express.Router();
 const multer  = require('multer');
 const Picture = require('../models/picture');
-const { checkConnected } = require('../configs/middlewares');
+const { isConnected } = require('../configs/middlewares');
 const User = require("../models/User")
-
+const Holiday = require("../models/Holiday")
 
 /* GET home page */
 router.get('/', (req, res, next) => {
@@ -13,14 +13,35 @@ router.get('/', (req, res, next) => {
     .then(user => {
       res.render('index', user);
     }) 
-  }else {
+  } else {
     res.redirect('/auth/login');
   }
 });
 
+// HOLIDAY REQUEST ROUTES
 router.get('/holiday-request', (req, res, next) => {
-  res.render('holiday-request')
-});
+  if(req.user) {
+    User.findOne({ _id: req.user._id })
+    .then(user => {
+      res.render('holiday-request', user);
+    }) 
+  }
+    else {
+      res.redirect('/auth/login');
+    }
+  });
+
+router.post('/holiday-request', isConnected, (req, res, next) => {
+  Holiday.create({
+    startDate: req.body.startDate,
+    endDate: req.body.endDate,
+    employeeComment: req.body.employeeComment
+  })
+  .then(() => {
+    
+  })
+  .catch(console.log)
+})
 
 router.get('/history', (req, res, next) => {
   res.render('holiday-request')

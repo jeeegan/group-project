@@ -1,0 +1,22 @@
+<h2>Holiday Request</h2>
+
+<ul class="list-unstyled">
+  <li>Holiday Allowance:  {{ holidayAllowance }}</li>
+  <li>Holidays Booked:  {{ holidayBooked }}</li>
+</ul>
+
+<form action="/holiday-request" method="POST">
+  <h3>Form</h3>
+  Start Date:  <input type="date" id="startdate" name="startDate"> <br>
+  End Date:  <input type="date" id="enddate" name="endDate"> <br>
+  Comments:  <textarea name="employeeComment" id="comments" cols="16" rows="3"></textarea> <br>
+   
+  <br>
+  {{#if message }}
+    <div class="error-message">{{ message }}</div>
+  {{/if}}
+
+  <br><br>
+
+  <button>Submit</button>
+</form>
