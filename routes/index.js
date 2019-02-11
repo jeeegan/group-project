@@ -3,8 +3,8 @@ const router  = express.Router();
 const multer  = require('multer');
 const Picture = require('../models/picture');
 const { isConnected } = require('../configs/middlewares');
-const User = require("../models/User")
 const Holiday = require("../models/Holiday")
+const User = require("../models/User")
 
 /* GET home page */
 router.get('/', (req, res, next) => {
@@ -31,14 +31,13 @@ router.get('/holiday-request', (req, res, next) => {
     }
   });
 
-router.post('/holiday-request', isConnected, (req, res, next) => {
-  Holiday.create({
+router.post('/holiday-request', (req, res, next) => {
+  Holiday.save({
     startDate: req.body.startDate,
     endDate: req.body.endDate,
     employeeComment: req.body.employeeComment
   })
   .then(() => {
-    
   })
   .catch(console.log)
 })

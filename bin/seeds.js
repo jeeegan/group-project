@@ -31,6 +31,19 @@ let users = [
     startDate: new Date(2019, 02, 11),
     jobTitle: 'boss',
     holidayBooked: 1
+  },
+  {
+    name: "Jamie",
+    username: "jamie",
+    password: bcrypt.hashSync("1234", bcrypt.genSaltSync(bcryptSalt)),
+    email: 'jamie@gmail.com',
+    role: 'ADMIN',
+    linkedinUrl: 'https://www.linkedin.com/',
+    githubUrl: 'https://github.com/',
+    holidayAllowance: 15,
+    startDate: new Date(2019, 02, 11),
+    jobTitle: '?',
+    holidayBooked: 1
   }
 ]
 
