@@ -5,6 +5,9 @@ const Picture = require('../models/picture');
 const { checkConnected, checkManager } = require('../configs/middlewares');
 const Holiday = require("../models/Holiday");
 const User = require("../models/User");
+const bcrypt = require("bcrypt")
+
+const bcryptSalt = 10;
 
 router.get('/', checkConnected, (req, res, next) => {
   User.findOne({ _id: req.user._id })
@@ -25,13 +28,16 @@ router.post('/holiday-request', checkConnected, (req, res, next) => {
   const newHoliday = new Holiday({ _userId: req.user._id, startDate, endDate, employeeComment});
   newHoliday.save()
   .then(() => {
-    res.render('index');
+    res.redirect('/');
   })
   .catch(console.log)
 })
 
 router.get('/history', checkConnected, (req, res, next) => {
-  res.render('history')
+  Holiday.find({ _userId: req.user._id })
+  .then(holidays => {
+    res.render('history', {holidays});
+  }) 
 });
 
 router.get('/my-profile', checkConnected, (req, res, next) => {
@@ -44,6 +50,17 @@ router.get('/my-profile', checkConnected, (req, res, next) => {
 router.get('/add-employee', checkManager, (req, res, next) => { // protected route ADMIN/MANAGER only
   res.render('add-employee')
 });
+
+router.post('/add-employee', checkManager, (req, res, next) => {
+  const { name, username, password, email, role, linkedinUrl, githubUrl, holidayAllowace, startDate, jobTitle } = req.body;
+  const newUser = new User({name, username, password: bcrypt.hashSync(password, bcrypt.genSaltSync(bcryptSalt)), email, role, linkedinUrl, githubUrl, holidayAllowace, startDate, jobTitle});
+  newUser.save()
+  .then((x) => {
+    console.log(x)
+    res.redirect('/');
+  })
+  .catch(console.log)
+})
 
 router.get('/approve-holidays', checkManager, (req, res, next) => { // protected route ADMIN/MANAGER only
   res.render('approve-holidays')
