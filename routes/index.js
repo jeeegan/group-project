@@ -4,6 +4,7 @@ const multer  = require('multer');
 const Picture = require('../models/picture');
 const { checkConnected, checkManager } = require('../configs/middlewares');
 const Holiday = require("../models/Holiday");
+const ManagedBy = require("../models/ManagedBy");
 const User = require("../models/User");
 const bcrypt = require("bcrypt")
 
@@ -55,8 +56,13 @@ router.post('/add-employee', checkManager, (req, res, next) => {
   const { name, username, password, email, role, linkedinUrl, githubUrl, holidayAllowace, startDate, jobTitle } = req.body;
   const newUser = new User({name, username, password: bcrypt.hashSync(password, bcrypt.genSaltSync(bcryptSalt)), email, role, linkedinUrl, githubUrl, holidayAllowace, startDate, jobTitle});
   newUser.save()
-  .then((x) => {
-    console.log(x)
+  .then((user) => {
+    const newUser = user._id;
+    const currManager = req.user._id;
+    const newManagedBy = new ManagedBy({_userId: newUser, _manager: currManager});
+    newManagedBy.save();
+  })
+  .then(() => {
     res.redirect('/');
   })
   .catch(console.log)

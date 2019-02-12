@@ -6,6 +6,8 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 const User = require("../models/User");
+const ManagedBy = require("../models/ManagedBy");
+const Holiday = require("../models/Holiday");
 
 const bcryptSalt = 10;
 
@@ -19,6 +21,19 @@ mongoose
   });
 
 let users = [
+  {
+    name: "Super",
+    username: "super",
+    password: bcrypt.hashSync("1234", bcrypt.genSaltSync(bcryptSalt)),
+    email: 'super@gmail.com',
+    role: 'ADMIN',
+    linkedinUrl: 'https://www.linkedin.com/in/super/',
+    githubUrl: 'https://github.com/super',
+    holidayAllowance: 15,
+    startDate: new Date(2019, 02, 11),
+    jobTitle: 'super',
+    holidayBooked: 1
+  },
   {
     name: "Alec",
     username: "abudd1094",
@@ -73,13 +88,19 @@ let users = [
   } 
 ]
 
-User.deleteMany()
+Promise.all([
+  Holiday.deleteMany(),
+  User.deleteMany(),
+  ManagedBy.deleteMany()
+])
 .then(() => {
   return User.create(users)
 })
 .then(usersCreated => {
-  console.log(`${usersCreated.length} users created with the following id:`);
-  console.log(usersCreated.map(u => u._id));
+  console.log(`Users created: ${usersCreated}`);
+  const superUser = usersCreated[0]._id;
+  const managerRelationships = usersCreated.map((u) => ({_userId: u._id, _manager: superUser}) );
+  return ManagedBy.create(managerRelationships);
 })
 .then(() => {
   // Close properly the connection to Mongoose
