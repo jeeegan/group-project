@@ -57,7 +57,20 @@ let users = [
     startDate: new Date(2019, 02, 11),
     jobTitle: 'testjob',
     holidayBooked: 1
-  }
+  },
+  {
+    name: "Sinan",
+    username: "snntylan",
+    password: bcrypt.hashSync("1234", bcrypt.genSaltSync(bcryptSalt)),
+    email: 'sinan.tylan@gmail.com',
+    role: 'ADMIN',
+    linkedinUrl: 'https://www.linkedin.com/in/sinantaylan/',
+    githubUrl: 'https://github.com/abudd1094',
+    holidayAllowance: 15,
+    startDate: new Date(2019, 02, 11),
+    jobTitle: 'boss',
+    holidayBooked: 1
+  } 
 ]
 
 User.deleteMany()
