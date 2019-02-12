@@ -2,8 +2,16 @@
 <ul>
   {{#each user}}
     <li>
+      {{this.name}}
       {{this.startDate}}
+      {{this.endDate}}
       {{this.status}}
     </li>
   {{/each}}
 </ul>
+<form action="/approve-holidays" method="POST">
+  <button name="except"></button>
+</form>
+<form action="/approve-holidays" method="POST">
+  <button name="reject"></button>
+</form>
