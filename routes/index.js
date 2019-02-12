@@ -80,6 +80,18 @@ router.get('/approve-holidays', checkManager, (req, res, next) => { // protected
   })
 });
 
+router.post('/approve-holidays', checkManager, (req, res, next) => {
+  Holiday.find({})
+  .then(users =>{
+    
+  })
+})
+
+router.post('/reject-holidays', checkManager, (req, res, next) => {
+  
+})
+
+
 router.get('/employee-list', checkManager, (req, res, next) => { // protected route ADMIN/MANAGER only
   res.render('employee-list')
 });

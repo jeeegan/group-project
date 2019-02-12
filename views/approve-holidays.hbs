@@ -1,17 +1,17 @@
 <h2>Approve Holidays</h2>
 <ul>
   {{#each user}}
-    <li>
-      {{this.name}}
-      {{this.startDate}}
-      {{this.endDate}}
-      {{this.status}}
-    </li>
+  <li>
+    {{this.name}}
+    {{this.startDate}}
+    {{this.endDate}}
+    {{this.status}}
+    <form action="/approve-holidays" method="POST">
+      <button name="except">Approve</button>
+    </form>
+    <form action="/rejected-holidays" method="POST">
+      <button name="reject">Deny</button>
+    </form>
+  </li>
   {{/each}}
 </ul>
-<form action="/approve-holidays" method="POST">
-  <button name="except"></button>
-</form>
-<form action="/approve-holidays" method="POST">
-  <button name="reject"></button>
-</form>
