@@ -80,15 +80,12 @@ router.get('/approve-holidays', checkManager, (req, res, next) => { // protected
   })
 });
 
-router.post('/approve-holidays', checkManager, (req, res, next) => {
-  Holiday.find({})
-  .then(users =>{
-    
+router.post('/approve-holidays/:id', checkManager, (req, res, next) => {
+  console.log("REQ BODY DEBUG ", req.body.status)
+  Holiday.updateOne({_id: req.params.id}, { status: req.body.status, managerComment: req.body.managerComment })
+  .then(() => {
+    res.redirect('/')
   })
-})
-
-router.post('/reject-holidays', checkManager, (req, res, next) => {
-  
 })
 
 
