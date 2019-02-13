@@ -6,14 +6,25 @@
 </ul>
 
 <form action="/holiday-request" method="POST">
-  <h3>Form</h3>
-  Start Date:  <input type="date" id="startdate" name="startDate"> <br>
-  End Date:  <input type="date" id="enddate" name="endDate"> <br>
-  Comments:  <textarea name="employeeComment" id="comments" cols="16" rows="3"></textarea> <br>
-  <br>
+  <h3 >Form</h3>
+  <div class="form-row">
+    <div class="col">
+    <label for="startdate">Start Date</label>
+    <input type="date" class="form-control" id="startdate" name="startDate">
+    </div>
+    <div class="col">
+    <label for="enddate">End Date</label>
+    <input type="date" class="form-control" id="enddate" name="endDate">
+    </div>
+  </div>
+  <div class="form-group">
+  <label for="employeeComment">Comments</label>
+  <textarea name="employeeComment" class="form-control" id="comments" cols="16" rows="3"></textarea>
+  </div>
   {{#if message }}
     <div class="error-message">{{ message }}</div>
   {{/if}}
-  <br><br>
-  <button>Submit</button>
+  <div class="form-group">
+  <button class="btn btn-primary">Submit</button>
+  </div>
 </form>
