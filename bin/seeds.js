@@ -24,71 +24,71 @@ mongoose
 
 let users = [
   {
-    name: "Super",
+    name: "Super User",
     username: "super",
     password: bcrypt.hashSync("1234", bcrypt.genSaltSync(bcryptSalt)),
-    email: 'super@gmail.com',
+    email: 'super@test.com',
     role: 'ADMIN',
-    linkedinUrl: 'https://www.linkedin.com/in/super/',
-    githubUrl: 'https://github.com/super',
-    holidayAllowance: 15,
-    startDate: new Date(2019, 02, 11),
-    jobTitle: 'super',
-    holidayBooked: 1
+    linkedinUrl: 'https://www.linkedin.com/',
+    githubUrl: 'https://github.com/',
+    holidayAllowance: 00,
+    startDate: new Date(2000, 01, 01),
+    jobTitle: 'Administrator',
+    holidayBooked: 0
   },
   {
     name: "Alec",
-    username: "abudd1094",
-    password: bcrypt.hashSync("password", bcrypt.genSaltSync(bcryptSalt)),
-    email: 'abudd1094@gmail.com',
+    username: "alec",
+    password: bcrypt.hashSync("1234", bcrypt.genSaltSync(bcryptSalt)),
+    email: 'alec@test.com',
     role: 'ADMIN',
-    linkedinUrl: 'https://www.linkedin.com/in/alecbudd/',
-    githubUrl: 'https://github.com/abudd1094',
-    holidayAllowance: 15,
-    startDate: new Date(2019, 02, 11),
-    jobTitle: 'boss',
-    holidayBooked: 1
+    linkedinUrl: 'https://www.linkedin.com/',
+    githubUrl: 'https://github.com/',
+    holidayAllowance: 28,
+    startDate: new Date(2017, 01, 01),
+    jobTitle: 'Web Dev',
+    holidayBooked: 0
   },
   {
     name: "Jamie",
     username: "jamie",
     password: bcrypt.hashSync("1234", bcrypt.genSaltSync(bcryptSalt)),
-    email: 'jamie@gmail.com',
+    email: 'jamie@test.com',
     role: 'ADMIN',
     linkedinUrl: 'https://www.linkedin.com/',
     githubUrl: 'https://github.com/',
-    holidayAllowance: 15,
+    holidayAllowance: 28,
     startDate: new Date(2019, 02, 11),
-    jobTitle: '?',
-    holidayBooked: 1
+    jobTitle: 'Web Dev',
+    holidayBooked: 0
   },
   {
-    name: "test",
-    username: "test",
+    name: "John Smith",
+    username: "john",
     password: bcrypt.hashSync("1234", bcrypt.genSaltSync(bcryptSalt)),
-    email: 'test@gmail.com',
+    email: 'john@test.com',
     role: 'EMPLOYEE',
     linkedinUrl: 'https://www.linkedin.com/',
     githubUrl: 'https://github.com/',
-    holidayAllowance: 15,
+    holidayAllowance: 28,
     startDate: new Date(2019, 02, 11),
-    jobTitle: 'testjob',
-    holidayBooked: 1
+    jobTitle: 'Admin',
+    holidayBooked: 0
   },
   {
     name: "Sinan",
     username: "snntylan",
     password: bcrypt.hashSync("1234", bcrypt.genSaltSync(bcryptSalt)),
-    email: 'sinan.tylan@gmail.com',
+    email: 'sinan@test.com',
     role: 'ADMIN',
-    linkedinUrl: 'https://www.linkedin.com/in/sinantaylan/',
-    githubUrl: 'https://github.com/abudd1094',
-    holidayAllowance: 15,
+    linkedinUrl: 'https://www.linkedin.com/',
+    githubUrl: 'https://github.com/',
+    holidayAllowance: 28,
     startDate: new Date(2019, 02, 11),
-    jobTitle: 'boss',
+    jobTitle: 'Web Dev',
     holidayBooked: 1
   } 
-]
+];
 
 Promise.all([
   Holiday.deleteMany(),

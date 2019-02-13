@@ -2,4 +2,8 @@ $primary: #0f1292; // Override the default $primary color
 
 @import '../../node_modules/bootstrap/scss/bootstrap.scss';
 
+button {
+  margin: 10px 0 10px 0;
+}
+
 
