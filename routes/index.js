@@ -73,15 +73,15 @@ router.get('/approve-holidays', checkManager, (req, res, next) => { // protected
   .then(users => {
     const userArr = users.map((u)=> u._userId);
     Holiday.find({$and: [{_userId : userArr}, {status: 'PENDING'}]})
+      .populate('_userId')
       .then(user => {
-
-    res.render('approve-holidays', {user});
-  }); 
+        console.log(user)
+        res.render('approve-holidays', {user});
+    }); 
   })
 });
 
 router.post('/approve-holidays/:id', checkManager, (req, res, next) => {
-  console.log("REQ BODY DEBUG ", req.body.status)
   Holiday.updateOne({_id: req.params.id}, { status: req.body.status, managerComment: req.body.managerComment })
   .then(() => {
     res.redirect('/')

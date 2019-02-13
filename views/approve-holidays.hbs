@@ -1,23 +1,35 @@
 <div class="card">
   <div class="card-body">
     <h2>Approve Holidays</h2>
-    <ul>
-      {{#each user}}
-      <li>
-        {{this.name}}
-        {{this.startDate}}
-        {{this.endDate}}
-        {{this.status}}
-        <form action="/approve-holidays/{{this._id}}" method="POST">
-          Comments:  <textarea name="managerComment" cols="16" rows="3"></textarea> <br>
-          <select name="status">
-            <option value="APPROVED">Approved</option>
-            <option value="REJECTED">Rejected</option>
-          </select>
-          <button>Confirm</button>
-        </form>
-      </li>
-      {{/each}}
-    </ul>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Start Date</th>
+          <th scope="col">End Date</th>
+          <th scope="col">Request Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each user}}
+        <tr>
+          <td scope="row">{{this._userId.name}}</th>
+          <td>{{this.startDate}}</td>
+          <td>{{this.endDate}}</td>
+          <td>{{this.status}}</td>
+          <td>
+            <form action="/approve-holidays/{{this._id}}" method="POST">
+              <textarea name="managerComment" cols="16" rows="3"></textarea> <br>
+              <select name="status">
+                <option value="APPROVED">Approved</option>
+                <option value="REJECTED">Rejected</option>
+              </select>
+              <button>Confirm</button>
+            </form>
+          </td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
   </div>
 </div>
