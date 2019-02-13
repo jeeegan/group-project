@@ -1,20 +1,6 @@
-
-<form action="/add-employee" method="POST">
-  <h3>Employee Details</h3>
-  Name:  <input type="text" id="employeeName" name="name"> <br>
-  Username:  <input type="text" id="employeeUserName" name="username"> <br>
-  Password: <input type="password" name="password"> <br>
-  Email:  <input type="text" id="employeeEmail" name="email"> <br>
-  Role:  <select name="role" id="employeeRole">
-  Linkedin: <input type="text" id="employeeLinkedin" name="linkedinUrl"> <br>
-  Github:  <input type="text" id="employeeGithub" name="githubUrl"> <br>
-  Holiday Allowance:  <input type="number" id="employeeAllowance" name="holidayAllowance"> <br>
-  Start Date:  <input type="date" name="startDate"> <br>
-  Job Title:  <input type="text" name="jobTitle"> <br>
-  <br>
-  {{#if message }}
-    <div class="error-message">{{ message }}</div>
-  {{/if}}
-  <br><br>
-  <button>Submit</button>
-</form>
+<h2>Employee List</h2>
+<ul>
+  {{#each users}}
+  <li>Name: {{this.name}} </li>  
+  {{/each}}
+</ul>
