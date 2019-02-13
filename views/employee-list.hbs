@@ -1,14 +1,18 @@
-<h2>Employee List</h2>
-<ul>
-  {{#each users}}
-  <li>Name: {{this.name}} </li>
-  <li>Username: {{this.username}}</li>
-  <li>Email: {{this.email}}</li>
-  <li>Linkedin: {{this.linkedinUrl}}</li>
-  <li>Github: {{this.githubUrl}}</li>
-  <li>Holiday Allowance: {{this.holidayAllowance}}</li>
-  <li>Start Date: {{this.startDate}}</li>
-  <li>Job Title: {{this.jobTitle}}</li>
-  <li>Holidays Booked: {{this.holidayBooked}}</li>
-  {{/each}}
-</ul>
+<div class="card">
+  <div class="card-body">
+    <h2>Employee List</h2>
+    <ul>
+      {{#each users}}
+      <li>Name: {{this.name}} </li>
+      <li>Username: {{this.username}}</li>
+      <li>Email: {{this.email}}</li>
+      <li>Linkedin: {{this.linkedinUrl}}</li>
+      <li>Github: {{this.githubUrl}}</li>
+      <li>Holiday Allowance: {{this.holidayAllowance}}</li>
+      <li>Start Date: {{this.startDate}}</li>
+      <li>Job Title: {{this.jobTitle}}</li>
+      <li>Holidays Booked: {{this.holidayBooked}}</li>
+      {{/each}}
+    </ul>
+  </div>
+</div>

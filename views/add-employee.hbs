@@ -1,58 +1,62 @@
-<h2>Add Employee</h2>
-<form action="/add-employee" method="POST">
-  <h3>Employee Information</h3>
-  <div class="form-row">
-    <div class="col">
-      <label for="username">Username</label>
-      <input type="text" class="form-control" id="username" name="username">
-    </div>
-    <div class="col">
-      <label for="password">Password</label>
-      <input type="password" class="form-control" id="password" name="password">
-    </div>
+<div class="card">
+  <div class="card-body">
+    <h2>Add Employee</h2>
+    <form action="/add-employee" method="POST">
+      <h3>Employee Information</h3>
+      <div class="form-row">
+        <div class="col">
+          <label for="username">Username</label>
+          <input type="text" class="form-control" id="username" name="username">
+        </div>
+        <div class="col">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" id="password" name="password">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col">
+          <label for="employeeName">Name</label>
+          <input type="text" class="form-control" id="employeeName" name="name">
+        </div>
+        <div class="col">
+          <label for="employeeEmail">Email</label>
+          <input type="text" class="form-control" id="employeeEmail" name="email">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col">
+          <label for="role">Role</label>
+          <select name="role" class="form-control" id="employeeRole">
+          <option value="EMPLOYEE">employee</option>
+          <option value="MANAGER">manager</option>
+          <option value="ADMIN">admin</option>
+        </select>
+        </div>
+        <div class="col">
+          <label for="startDate">Start Date</label>
+          <input type="date" class="form-control" name="startDate">
+        </div>
+        <div class="col">
+          <label for="employeeAllowance">Holiday Allowance</label>
+          <input type="number" class="form-control" id="employeeAllowance" name="holidayAllowance">
+        </div>
+      </div>
+      <div class="form-row">
+        <label for="employeeLinkedin">LinkedIn</label>
+        <input type="text" class="form-control" id="employeeLinkedin" name="linkedinUrl">
+      </div>
+      <div class="form-row">
+        <label for="employeeGithub">GitHub</label>
+        <input type="text" class="form-control" id="employeeGithub" name="githubUrl">
+      </div>
+      <div class="form-row">
+        <label for="jobTitle">Job Title</label>
+        <input type="text" class="form-control" name="jobTitle">
+      </div>
+      {{#if message }}
+        <div class="error-message">{{ message }}</div>
+      {{/if}}
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
   </div>
-  <div class="form-row">
-    <div class="col">
-      <label for="employeeName">Name</label>
-      <input type="text" class="form-control" id="employeeName" name="name">
-    </div>
-    <div class="col">
-      <label for="employeeEmail">Email</label>
-      <input type="text" class="form-control" id="employeeEmail" name="email">
-    </div>
-  </div>
-  <div class="form-row">
-    <div class="col">
-      <label for="role">Role</label>
-      <select name="role" class="form-control" id="employeeRole">
-      <option value="EMPLOYEE">employee</option>
-      <option value="MANAGER">manager</option>
-      <option value="ADMIN">admin</option>
-    </select>
-    </div>
-    <div class="col">
-      <label for="startDate">Start Date</label>
-      <input type="date" class="form-control" name="startDate">
-    </div>
-    <div class="col">
-      <label for="employeeAllowance">Holiday Allowance</label>
-      <input type="number" class="form-control" id="employeeAllowance" name="holidayAllowance">
-    </div>
-  </div>
-  <div class="form-row">
-    <label for="employeeLinkedin">LinkedIn</label>
-    <input type="text" class="form-control" id="employeeLinkedin" name="linkedinUrl">
-  </div>
-  <div class="form-row">
-    <label for="employeeGithub">GitHub</label>
-    <input type="text" class="form-control" id="employeeGithub" name="githubUrl">
-  </div>
-  <div class="form-row">
-    <label for="jobTitle">Job Title</label>
-    <input type="text" class="form-control" name="jobTitle">
-  </div>
-  {{#if message }}
-    <div class="error-message">{{ message }}</div>
-  {{/if}}
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+</div>

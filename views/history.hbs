@@ -1,8 +1,12 @@
-<h2>Request History</h2>
-<ul>
-  {{#each holidays}}
-  <li>
-    Start Date: {{this.startDate}}, End Date: {{this.endDate}}, Comment: {{this.employeeComment}}, Manager Comment: {{this.managerComment}}, Status: {{this.status}}
-  </li>
-  {{/each}}
-</ul>
+<div class="card">
+  <div class="card-body">
+    <h2>Request History</h2>
+    <ul>
+      {{#each holidays}}
+      <li>
+        Start Date: {{this.startDate}}, End Date: {{this.endDate}}, Comment: {{this.employeeComment}}, Manager Comment: {{this.managerComment}}, Status: {{this.status}}
+      </li>
+      {{/each}}
+    </ul>
+  </div>
+</div>
