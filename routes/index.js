@@ -1,7 +1,7 @@
 const express = require('express');
 const router  = express.Router();
 const multer  = require('multer');
-const Picture = require('../models/picture');
+const Picture = require('../models/Picture');
 const { checkConnected, checkManager } = require('../configs/middlewares');
 const Holiday = require("../models/Holiday");
 const ManagedBy = require("../models/ManagedBy");
