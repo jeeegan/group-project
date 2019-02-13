@@ -90,7 +90,10 @@ router.post('/approve-holidays/:id', checkManager, (req, res, next) => {
 
 
 router.get('/employee-list', checkManager, (req, res, next) => { // protected route ADMIN/MANAGER only
-  res.render('employee-list')
+  User.find({role: 'EMPLOYEE'})
+  .then((users)=>{
+    res.render('employee-list', {users});
+  })
 });
 
 // setting upload path for multer
