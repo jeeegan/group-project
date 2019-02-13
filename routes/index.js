@@ -69,16 +69,12 @@ router.post('/add-employee', checkManager, (req, res, next) => {
 })
 
 router.get('/approve-holidays', checkManager, (req, res, next) => { // protected route ADMIN/MANAGER only
-  ManagedBy.find({ _manager: req.user._id })
-  .then(users => {
-    const userArr = users.map((u)=> u._userId);
-    Holiday.find({$and: [{_userId : userArr}, {status: 'PENDING'}]})
+    Holiday.find({status: 'PENDING'})
       .populate('_userId')
       .then(user => {
         console.log(user)
         res.render('approve-holidays', {user});
     }); 
-  })
 });
 
 router.post('/approve-holidays/:id', checkManager, (req, res, next) => {
