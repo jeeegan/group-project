@@ -2,14 +2,13 @@
   <div class="card-body">
     <h2>{{name}}'s Profile</h2>
     <ul class="list-unstyled">
-      <li>Name:  {{ name }}</li>
-      <li>Username:  {{ username }}</li>
-      <li>Change Password:  </li>
-      <li>Email:  {{ email }}</li>
-      <li>Role:  {{ role }}</li>
-      <li>Linkedin:  <a target="_blank" href="{{ linkedinUrl }}">{{ linkedinUrl }}</a></li>
-      <li>Github:  <a target="_blank" href="{{ githubUrl }}">{{ githubUrl }}</a></li>
-      <li>Start Date:  {{ startDate }}</li>
+      <li><div style="display: inline-block; width: 110px">Name:</div>{{ name }}</li>
+      <li><div style="display: inline-block; width: 110px">Username:</div>{{ username }}</li>
+      <li><div style="display: inline-block; width: 110px">Email:</div>{{ email }}</li>
+      <li><div style="display: inline-block; width: 110px">Role:</div>{{ role }}</li>
+      <li><div style="display: inline-block; width: 110px">Linkedin:</div><a target="_blank" href="{{ linkedinUrl }}">{{ linkedinUrl }}</a></li>
+      <li><div style="display: inline-block; width: 110px">Github:</div><a target="_blank" href="{{ githubUrl }}">{{ githubUrl }}</a></li>
+      <li><div style="display: inline-block; width: 110px">Start Date:</div>{{ startDate }}</li>
     </ul>
   </div>
 </div>
