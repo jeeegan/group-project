@@ -1,7 +1,7 @@
 <div class="card">
   <div class="card-body">
     <h2>Approve Holidays</h2>
-    <table class="table">
+    <table class="table-responsive">
       <thead>
         <tr>
           <th scope="col">Name</th>
@@ -21,11 +21,11 @@
           <td>
             <form action="/approve-holidays/{{this._id}}" method="POST">
               <textarea name="managerComment" cols="16" rows="3"></textarea> <br>
-              <select name="status">
+              <select clas="custom-select" name="status">
                 <option value="APPROVED">Approved</option>
                 <option value="REJECTED">Rejected</option>
               </select>
-              <button>Confirm</button>
+              <button class="btn btn-primary">Confirm</button>
             </form>
           </td>
         </tr>
