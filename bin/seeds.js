@@ -24,8 +24,34 @@ mongoose
 
 let users = [
   {
-    name: "Super User",
-    username: "super",
+    name: "Maxence",
+    username: "mc100s",
+    password: bcrypt.hashSync("1234", bcrypt.genSaltSync(bcryptSalt)),
+    email: 'carrot@test.com',
+    role: 'ADMIN',
+    linkedinUrl: 'https://www.linkedin.com/',
+    githubUrl: 'https://github.com/',
+    holidayAllowance: 00,
+    startDate: new Date(2000, 01, 01),
+    jobTitle: 'Lead Instructor',
+    holidayBooked: 0
+  },
+  {
+    name: "Thor",
+    username: "tormod",
+    password: bcrypt.hashSync("1234", bcrypt.genSaltSync(bcryptSalt)),
+    email: 'thor@test.com',
+    role: 'ADMIN',
+    linkedinUrl: 'https://www.linkedin.com/',
+    githubUrl: 'https://github.com/',
+    holidayAllowance: 00,
+    startDate: new Date(2000, 01, 01),
+    jobTitle: 'Software Developer',
+    holidayBooked: 0
+  },
+  {
+    name: "Aaron",
+    username: "aaron",
     password: bcrypt.hashSync("1234", bcrypt.genSaltSync(bcryptSalt)),
     email: 'super@test.com',
     role: 'ADMIN',
@@ -33,7 +59,20 @@ let users = [
     githubUrl: 'https://github.com/',
     holidayAllowance: 00,
     startDate: new Date(2000, 01, 01),
-    jobTitle: 'Administrator',
+    jobTitle: 'Software Developer',
+    holidayBooked: 0
+  },
+  {
+    name: "Axel",
+    username: "axel",
+    password: bcrypt.hashSync("1234", bcrypt.genSaltSync(bcryptSalt)),
+    email: 'axel@test.com',
+    role: 'EMPLOYEE',
+    linkedinUrl: 'https://www.linkedin.com/',
+    githubUrl: 'https://github.com/',
+    holidayAllowance: 00,
+    startDate: new Date(2000, 01, 01),
+    jobTitle: 'Software Developer',
     holidayBooked: 0
   },
   {
