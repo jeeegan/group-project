@@ -35,9 +35,12 @@ router.post('/holiday-request', checkConnected, (req, res, next) => {
 })
 
 router.get('/history', checkConnected, (req, res, next) => {
+  // TODO: if you have req.query.status, change the options
   Holiday.find({ _userId: req.user._id })
   .then(holidays => {
-    res.render('history', {holidays});
+    res.render('history', {
+      holidays
+    });
   }) 
 });
 

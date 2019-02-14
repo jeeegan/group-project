@@ -1,7 +1,7 @@
 <div class="card">
   <div class="card-body">
 <h2>Employee List</h2>
-  <table class="table-responsive">
+  <table class="table table-responsive">
       <thead>
       <tr>
         <th scope="col">Name</th>
@@ -21,7 +21,11 @@
         <td>{{this.username}}</td>
         <td>{{this.email}}</td>
         <td>{{this.linkedinUrl}}</td>
-        <td>{{this.githubUrl}}</td>
+        <td>
+          <a href="{{this.githubUrl}}">
+            <i class="fab fa-github"></i>
+          </a>
+        </td>
         <td>{{this.holidayAllowance}}</td>
         <td>{{this.jobTitle}}</td>
         <td>{{this.holidayBooked}}</td>

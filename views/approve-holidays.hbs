@@ -1,7 +1,7 @@
 <div class="card">
   <div class="card-body">
     <h2>Approve Holidays</h2>
-    <table class="table-responsive">
+    <table class="table table-responsive">
       <thead>
         <tr>
           <th scope="col">Name</th>
@@ -9,26 +9,32 @@
           <th scope="col">End Date</th>
           <th scope="col">Status</th>
           <th scope="col">Comments</th>
+          <th scope="col">Status</th>
+          <th scope="col">Action</th>
         </tr>
       </thead>
       <tbody>
         {{#each user}}
+            <form action="/approve-holidays/{{this._id}}" method="POST">
         <tr>
           <td scope="row">{{this._userId.name}}</th>
-          <td>{{this.startDate}}</td>
-          <td>{{this.endDate}}</td>
+          <td>{{formatDate this.startDate}}</td>
+          <td>{{formatDate this.endDate}}</td>
           <td>{{this.status}}</td>
           <td>
-            <form action="/approve-holidays/{{this._id}}" method="POST">
-              <textarea name="managerComment" cols="16" rows="3"></textarea> <br>
-              <select clas="custom-select" name="status">
+              <textarea name="managerComment" cols="16" rows="3" class="form-control"></textarea> <br>
+          </td>
+          <td>
+              <select class="form-control" name="status">
                 <option value="APPROVED">Approved</option>
                 <option value="REJECTED">Rejected</option>
               </select>
-              <button class="btn btn-primary">Confirm</button>
-            </form>
+          </td>
+          <td>
+              <button class="btn btn-primary m-0">Confirm</button>
           </td>
         </tr>
+            </form>
         {{/each}}
       </tbody>
     </table>

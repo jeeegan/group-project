@@ -47,6 +47,17 @@ hbs.registerHelper('ifUndefined', (value, options) => {
       return options.fn(this);
   }
 });
+
+// Creation of the helper 'formatDate'
+// Can be used the following way in a HBS file: {{formatDate startDate}}
+hbs.registerHelper('formatDate', (value) => {
+  if (value instanceof Date) {
+    return value.toDateString()
+  }
+  return value
+});
+
+
   
 // default value for title local
 app.locals.title = 'Holiday Management';
@@ -64,11 +75,7 @@ require('./passport')(app);
 // makes isConnected and isManager available throughout app
 app.use((req,res,next) => {
   res.locals.isConnected = !!req.user 
-  if((req.user && req.user.role === 'ADMIN') || (req.user && req.user.role === 'MANAGER')) {
-    res.locals.isManager = true;
-  } else {
-    res.locals.isManager = false;
-  }
+  res.locals.isManager = (req.user && req.user.role === 'ADMIN') || (req.user && req.user.role === 'MANAGER') 
   next()
 })
 
