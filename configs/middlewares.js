@@ -9,13 +9,10 @@ module.exports = {
     }
   },
   checkManager: (req,res,next) => { // middleware route protection to only allow ADMIN or MANAGER users
-    User.findOne({_id: req.user && req.user._id})
-      .then((user) => {
-      if(user.role === 'ADMIN' || user.role === 'MANAGER') {
-        next()
-      } else {
-        res.redirect('/');
-      }
-    })
+    if(req.user && (req.user.role === 'ADMIN' || req.user.role === 'MANAGER')) {
+      next()
+    } else {
+      res.redirect('/');
+    }
   }
 }
