@@ -8,7 +8,8 @@
           <th scope="col">Start Date</th>
           <th scope="col">End Date</th>
           <th scope="col">Status</th>
-          <th scope="col">Comments</th>
+          <th scope="col">Employee Comments</th>
+          <th scope="col">Notes</th>
           <th scope="col">Status</th>
           <th scope="col">Action</th>
         </tr>
@@ -21,6 +22,7 @@
           <td>{{formatDate this.startDate}}</td>
           <td>{{formatDate this.endDate}}</td>
           <td>{{this.status}}</td>
+          <td>{{this.employeeComment}}</td>
           <td>
               <textarea name="managerComment" cols="16" rows="3" class="form-control"></textarea> <br>
           </td>
