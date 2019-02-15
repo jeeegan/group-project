@@ -6931,7 +6931,7 @@ body {
   font-family: "Chivo"; }
 
 .card {
-  height: 80vh;
+  height: 85vh;
   border: #0892df 5px solid; }
 
 .card-body {
@@ -6947,7 +6947,10 @@ body {
   font-family: "Courgette"; }
 
 .navbar {
-  height: 10vh;
-  margin-bottom: 5vh; }
+  height: 8vh;
+  margin-bottom: 2.5vh; }
+
+.demo {
+  color: white; }
 
 /*# sourceMappingURL=style.css.map */

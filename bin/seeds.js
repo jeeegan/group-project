@@ -126,6 +126,58 @@ let users = [
     startDate: new Date(2019, 02, 11),
     jobTitle: 'Web Dev',
     holidayBooked: 1
+  },
+  {
+    name: "Peter Parker",
+    username: "peter",
+    password: bcrypt.hashSync("1234", bcrypt.genSaltSync(bcryptSalt)),
+    email: 'peter@test.com',
+    role: 'EMPLOYEE',
+    linkedinUrl: 'https://www.linkedin.com/',
+    githubUrl: 'https://github.com/',
+    holidayAllowance: 28,
+    startDate: new Date(2019, 02, 11),
+    jobTitle: 'Photographer',
+    holidayBooked: 1
+  },
+  {
+    name: "Tony Stark",
+    username: "tony",
+    password: bcrypt.hashSync("1234", bcrypt.genSaltSync(bcryptSalt)),
+    email: 'tony@test.com',
+    role: 'EMPLOYEE',
+    linkedinUrl: 'https://www.linkedin.com/',
+    githubUrl: 'https://github.com/',
+    holidayAllowance: 28,
+    startDate: new Date(2019, 02, 11),
+    jobTitle: 'Billionaire Arms Dealer',
+    holidayBooked: 1
+  },
+  {
+    name: "El Chapo",
+    username: "elchapo",
+    password: bcrypt.hashSync("1234", bcrypt.genSaltSync(bcryptSalt)),
+    email: 'elchapo@test.com',
+    role: 'EMPLOYEE',
+    linkedinUrl: 'https://www.linkedin.com/',
+    githubUrl: 'https://github.com/',
+    holidayAllowance: 28,
+    startDate: new Date(2019, 02, 11),
+    jobTitle: 'International Narcotics Dealer',
+    holidayBooked: 1
+  },
+  {
+    name: "Donald Trump",
+    username: "therealdonaldtrump",
+    password: bcrypt.hashSync("1234", bcrypt.genSaltSync(bcryptSalt)),
+    email: 'donald@kremlin.ru',
+    role: 'EMPLOYEE',
+    linkedinUrl: 'https://www.linkedin.com/',
+    githubUrl: 'https://github.com/',
+    holidayAllowance: 28,
+    startDate: new Date(2019, 02, 11),
+    jobTitle: 'Russian Spy',
+    holidayBooked: 1
   } 
 ];
 
