@@ -1,9 +1,39 @@
-$primary: #0f1292; // Override the default $primary color
+$primary: #0892df; // Override the default $primary color
 
 @import '../../node_modules/bootstrap/scss/bootstrap.scss';
+@import url('https://fonts.googleapis.com/css?family=Chivo|Courgette');
 
 button {
-  margin: 10px 0 10px 0;
+  margin: 10px 0 5px 0;
 }
 
+body {
+  background-color: #131b2b;
+  margin: 0;
+  font-family: "Chivo";
+}
 
+.card {
+  height: 80vh;
+  border: #0892df 5px solid;
+}
+
+.card-body {
+  background-color: #bad8eb;
+  color: #131b2b;
+  padding-left: 40px;
+  padding-top: 20px;
+}
+
+.navbar-brand {
+  font-size: 1.75em;
+}
+
+.navbar-brand, h2 {
+  font-family: "Courgette";
+}
+
+.navbar {
+  height: 10vh;
+  margin-bottom: 5vh;
+}

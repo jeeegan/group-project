@@ -24,12 +24,18 @@
         </div>
       </div>
       <div class="form-row">
+        <div class="col">
           <label for="role">Role</label>
           <select name="role" class="form-control" id="employeeRole">
-          <option value="EMPLOYEE">employee</option>
-          <option value="MANAGER">manager</option>
-          <option value="ADMIN">admin</option>
-        </select>
+            <option value="EMPLOYEE">employee</option>
+            <option value="MANAGER">manager</option>
+            <option value="ADMIN">admin</option>
+          </select>
+        </div>
+        <div class="col">
+          <label for="jobTitle">Job Title</label>
+          <input type="text" class="form-control" name="jobTitle">
+        </div>
       </div>
       <div class="form-row">
         <div class="col">
@@ -49,10 +55,7 @@
         <label for="employeeGithub">GitHub</label>
         <input type="text" class="form-control" id="employeeGithub" name="githubUrl">
       </div>
-      <div class="form-row">
-        <label for="jobTitle">Job Title</label>
-        <input type="text" class="form-control" name="jobTitle">
-      </div>
+
       {{#if message }}
         <div class="error-message">{{ message }}</div>
       {{/if}}
