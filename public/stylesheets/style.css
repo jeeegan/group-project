@@ -6941,13 +6941,15 @@ body {
   padding-top: 20px; }
 
 .navbar-brand {
-  font-size: 1.75em; }
+  font-size: 1.5em; }
+
+.nav-item {
+  font-size: 1em; }
 
 .navbar-brand, h2 {
   font-family: "Courgette"; }
 
 .navbar {
-  height: 8vh;
   margin-bottom: 2.5vh; }
 
 .demo {

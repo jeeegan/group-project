@@ -26,7 +26,11 @@ body {
 }
 
 .navbar-brand {
-  font-size: 1.75em;
+  font-size: 1.5em;
+}
+
+.nav-item {
+  font-size: 1em;
 }
 
 .navbar-brand, h2 {
@@ -34,7 +38,6 @@ body {
 }
 
 .navbar {
-  height: 8vh;
   margin-bottom: 2.5vh;
 }
 
