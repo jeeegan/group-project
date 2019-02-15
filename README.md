@@ -5,6 +5,7 @@ This is a basic employee holiday (vacation) management system. It allows manager
 A modern web browser (Chrome, Firefox, Safari)
 ## Instructions
 To login and demo the system you can use the following info:
+* Heroku live demo [https://hr-group-project.herokuapp.com/]
 * Super User - username: super, password: 1234
 * Test User - username: test, password: 1234
 Collecting a triangle gives an extra life (up to a maxiumum of 6). 'Hero Mode' generates additional squares but also gives double (+10 POINTS) for circles.
